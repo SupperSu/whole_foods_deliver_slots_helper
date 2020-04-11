@@ -1,7 +1,7 @@
 # whole_foods_deliver_slots_helper
 
 ## Usage:
-Support **Windows**.
+Support **Windows, MAC OS**.
 
 The script works on **Chrome** (```whole_foods_delivery_slot_chrome.py``` for Whole Foods)
 
