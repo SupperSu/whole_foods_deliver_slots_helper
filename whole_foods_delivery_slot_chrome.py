@@ -2,7 +2,16 @@ import bs4
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-import winsound
+import platform
+
+def make_sound():
+   if platform.system() == 'Darwin':
+      import os
+      for i in range(10):
+         os.system('say "Available Time, Be quick!"')
+   else:
+      import winsound
+      winsound.Beep(2000, 5000)
 
 def getWFSlot(productUrl):
    driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -25,7 +34,7 @@ def getWFSlot(productUrl):
          for each_date in all_dates:
             if not_opened_text not in each_date.text:
                print('SLOTS OPEN!')
-               winsound.Beep(2000, 5000)
+               make_sound()
                no_open_slots = False
                time.sleep(1400)
                break
